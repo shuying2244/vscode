@@ -1,6 +1,7 @@
 erlang_ls
 !erlang_ls/_build/*/bin/erlang_ls
 !erlang_ls/images/erlang-ls-logo-small.png
+els_dap
 !els_dap/_build/*/bin/els_dap
 
 .vscode/**
@@ -9,6 +10,7 @@ erlang_ls
 .gitignore
 **/tsconfig.json
 **/tsconfig.base.json
+vendor/**
 contributing.md
 .travis.yml
 client/node_modules/**

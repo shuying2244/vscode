@@ -85,23 +85,23 @@ export async function get_client(context: ExtensionContext): Promise<LanguageCli
         }
     };
 
-    let serverPath = workspace.getConfiguration('erlang_ls').serverPath;
+    let serverPath = workspace.getConfiguration('erlang_lsx').serverPath;
     if (serverPath === "") {
         serverPath = context.asAbsolutePath(
             path.join('erlang_ls', '_build', 'default', 'bin', 'erlang_ls')
         );
     };
 
-    let logLevel = workspace.getConfiguration('erlang_ls').logLevel;
+    let logLevel = workspace.getConfiguration('erlang_lsx').logLevel;
 
     let serverArgs = [ serverPath, "--log-level", logLevel ];
 
-    let logPath = workspace.getConfiguration('erlang_ls').logPath;
+    let logPath = workspace.getConfiguration('erlang_lsx').logPath;
     if (logPath !== "") {
         serverArgs.push("--log-dir", logPath);
     }
 
-    let escriptPath = workspace.getConfiguration('erlang_ls').escriptPath;
+    let escriptPath = workspace.getConfiguration('erlang_lsx').escriptPath;
     if (escriptPath === "") {
         escriptPath = 'escript';
     }
@@ -115,8 +115,8 @@ export async function get_client(context: ExtensionContext): Promise<LanguageCli
     verifyExecutable(serverPath, escriptPath);
 
     return new LanguageClient(
-        'erlang_ls',
-        'Erlang LS',
+        'erlang_lsx',
+        'Erlang Lsx',
         serverOptions,
         clientOptions
     );

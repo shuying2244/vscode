@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.0.47
+
+作为独立插件 Erlang Lsx（`shuying2244.erlang-lsx`）继续发布。原 Erlang LS 已停止维护，由树影接手更新。语言服务版本为 erlang_ls `1.1.6`。编辑器设置前缀改为 `erlang_lsx`。
+
 ### 0.0.46
 
 Server (1.0.0 -> 1.1.0)

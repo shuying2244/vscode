@@ -1,9 +1,9 @@
 {
-  "name": "erlang-ls",
-  "displayName": "Erlang LS",
-  "version": "0.0.46",
-  "publisher": "erlang-ls",
-  "description": "The Visual Studio Code Extension for the Erlang Language Server",
+  "name": "erlang-lsx",
+  "displayName": "Erlang Lsx",
+  "version": "0.0.47",
+  "publisher": "shuying2244",
+  "description": "Erlang Lsx：原 Erlang LS 停止维护后继续更新的独立 Erlang 语言插件",
   "categories": [
     "Programming Languages",
     "Snippets",
@@ -11,13 +11,13 @@
     "Formatters"
   ],
   "icon": "erlang_ls/images/erlang-ls-logo-small.png",
-  "homepage": "https://erlang-ls.github.io",
+  "homepage": "https://github.com/shuying2244/vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erlang-ls/vscode.git"
+    "url": "https://github.com/shuying2244/vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/erlang-ls/vscode/issues"
+    "url": "https://github.com/shuying2244/vscode/issues"
   },
   "main": "./client/out/extension.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "watch": "cd client && npm run watch",
     "postinstall": "cd client && npm install"
   },
-  "author": "erlang_ls",
+  "author": "树影",
   "license": "Apache-2.0",
   "engines": {
     "vscode": "^1.60.0"
@@ -39,9 +39,9 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Erlang LS",
+      "title": "Erlang Lsx",
       "properties": {
-        "erlang_ls.trace.server": {
+        "erlang_lsx.trace.server": {
           "scope": "window",
           "type": "string",
           "enum": [
@@ -52,31 +52,31 @@
           "default": "off",
           "description": "Traces the communication between VS Code and the Erlang language server."
         },
-        "erlang_ls.serverPath": {
+        "erlang_lsx.serverPath": {
           "scope": "window",
           "type": "string",
           "default": "",
           "description": "Override the default path of the erlang_ls executable with a custom one."
         },
-        "erlang_ls.dapPath": {
+        "erlang_lsx.dapPath": {
           "scope": "window",
           "type": "string",
           "default": "",
           "description": "Override the default path of the els_dap executable with a custom one."
         },
-        "erlang_ls.escriptPath": {
+        "erlang_lsx.escriptPath": {
           "scope": "window",
           "type": "string",
           "default": "",
           "description": "Override the default path of the escript executable with a custom one."
         },
-        "erlang_ls.logPath": {
+        "erlang_lsx.logPath": {
           "scope": "window",
           "type": "string",
           "default": "",
           "description": "Override the default directory erlang_ls logs to."
         },
-        "erlang_ls.logLevel": {
+        "erlang_lsx.logLevel": {
           "scope": "window",
           "enum": [
             "none",
@@ -125,7 +125,7 @@
     "debuggers": [
       {
         "type": "erlang",
-        "label": "Erlang OTP Debugger",
+        "label": "Erlang Lsx",
         "initialConfigurations": [
           {
             "name": "rebar shell",
@@ -227,16 +227,43 @@
                 "default": 300
               }
             }
+          },
+          "attach": {
+            "required": [
+              "projectnode"
+            ],
+            "properties": {
+              "projectnode": {
+                "type": "string",
+                "description": "name of the target node that the debugger connects to",
+                "default": "dap-project-node@localhost"
+              },
+              "cookie": {
+                "type": "string",
+                "description": "The magic cookie used to connect to the projectnode",
+                "default": "COOKIE"
+              },
+              "cwd": {
+                "type": "string",
+                "description": "Working directory for runinterminal",
+                "default": "${workspaceRoot}"
+              },
+              "use_long_names": {
+                "type": "boolean",
+                "description": "start erlang distribution with long names (-name option)",
+                "default": false
+              },
+              "timeout": {
+                "type": "integer",
+                "description": "Timeout for connecting to the projectnode after starting the debugger.",
+                "default": 300
+              }
+            }
           }
         }
       }
     ]
   },
-  "files": [
-    "erlang_ls/_build/default/bin/erlang_ls",
-    "els_dap/_build/default/bin/els_dap",
-    "erlang.tmbundle"
-  ],
   "devDependencies": {
     "@types/mocha": "^9.0.0",
     "@types/node": "^20.0.0",
@@ -245,5 +272,8 @@
     "mocha": "^9.1.2",
     "typescript": "^4.2.3",
     "@vscode/vsce": "^3.1.0"
+  },
+  "overrides": {
+    "buffer-equal-constant-time": "file:vendor/buffer-equal-constant-time"
   }
 }

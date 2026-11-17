@@ -1,0 +1,7 @@
+{
+  "name": "buffer-equal-constant-time",
+  "version": "1.0.1",
+  "description": "Constant-time buffer comparison without SlowBuffer",
+  "main": "index.js",
+  "license": "Apache-2.0"
+}
