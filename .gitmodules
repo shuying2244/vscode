@@ -1,9 +1,9 @@
 [submodule "erlang_ls"]
 	path = erlang_ls
-	url = https://github.com/erlang-ls/erlang_ls.git
+	url = https://github.com/shuying2244/erlang_ls.git
 [submodule "grammar"]
 	path = grammar
 	url = https://github.com/erlang-ls/grammar.git
 [submodule "els_dap"]
 	path = els_dap
-	url = https://github.com/erlang-ls/els_dap.git
+	url = https://github.com/shuying2244/els_dap.git
