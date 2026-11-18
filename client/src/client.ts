@@ -116,7 +116,7 @@ export async function get_client(context: ExtensionContext): Promise<LanguageCli
 
     return new LanguageClient(
         'erlang_lsx',
-        'Erlang Lsx',
+        'Erlang Ls Fork',
         serverOptions,
         clientOptions
     );

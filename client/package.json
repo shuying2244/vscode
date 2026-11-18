@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/shuying2244/vscode"
   },
-  "description": "VS Code client for Erlang Lsx",
+  "description": "VS Code client for Erlang Ls Fork",
   "engines": {
     "vscode": "^1.60.0"
   },
