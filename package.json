@@ -1,7 +1,7 @@
 {
   "name": "erlang-lsx",
   "displayName": "Erlang Ls Fork",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "publisher": "shuying2244",
   "description": "Erlang Ls Fork：原 Erlang LS 停止维护后继续更新的独立 Erlang 语言插件",
   "categories": [

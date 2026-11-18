@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.0.48
+
+语言服务升级到 erlang_ls `1.1.7`。修正 Windows 盘符路径的 URI 编码，避免字符串路径被错误转义。
+
 ### 0.0.47
 
 作为独立插件 Erlang Ls Fork（`shuying2244.erlang-lsx`）继续发布。原 Erlang LS 已停止维护，由树影接手更新。语言服务版本为 erlang_ls `1.1.6`。编辑器设置前缀改为 `erlang_lsx`。
