@@ -14,6 +14,9 @@ let client: LanguageClient;
 export async function get_client(context: ExtensionContext): Promise<LanguageClient> {
     let clientOptions: LanguageClientOptions = {
         documentSelector: [{ scheme: 'file', language: 'erlang' }],
+        initializationOptions: () => ({
+            upperCaseId: workspace.getConfiguration('erlang_lsx').get<boolean>('upperCaseId', true)
+        }),
         synchronize: {
             fileEvents: [
                 workspace.createFileSystemWatcher('**/rebar.config'),
